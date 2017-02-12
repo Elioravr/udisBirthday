@@ -1,0 +1,186 @@
+#world {
+  animation: first-fade-in 1s linear forwards;
+}
+
+.App {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: first-fade-in 1s linear forwards;
+}
+
+.App .loading-layout {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 30px;
+  background-color: rgba(0, 0, 0, 0.7);
+  animation: fade-in 0.3s linear forwards;
+}
+
+.App .title-container {
+  flex: 3;
+  animation: fade-in 0.5s linear forwards;
+}
+
+.App .main-title {
+  position: relative;
+  font-size: 45px;
+  margin-top: 20px;
+}
+
+.App .sub-title {
+  font-size: 20px;
+}
+
+.App .image {
+  width: 80px;
+}
+
+.App .image-1 {
+  width: 60px;
+  position: absolute;
+  top: -15px;
+  left: 10px;
+}
+
+.App .image-4 {
+  position: absolute;
+  top: -36px;
+  right: 10px;
+  transform: rotate(30deg);
+}
+
+.App .description {
+  flex: 3;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 20px;
+  padding: 10px 20px;
+  opacity: 0;
+  animation: fade-in 0.5s 0.5s linear forwards;
+}
+
+.App .name {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  animation: fade-in 0.5s 1s linear forwards;
+}
+
+.App .controls {
+  flex: 5;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.App .controls .button {
+  height: 115px !important;
+  width: 115px !important;
+  border-radius: 50% !important;
+  border: 1px solid !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  font-size: 18px !important;
+  transform: translateY(200px);
+}
+
+.App .controls .button span {
+  font-size: 18px !important;
+  padding: 0 !important;
+}
+
+.App .controls .button.button-yes {
+  color: #7CB342 !important;
+  border-color: #7CB342 !important;
+  animation: float-in 1s 1.5s cubic-bezier(0, 1.32, 1, 1), bubble 3s 2.5s linear infinite;
+}
+
+.App .controls .button.button-maybe {
+  color: #42A5F5 !important;
+  border-color: #42A5F5 !important;
+  animation: float-in 1s 2s cubic-bezier(0, 1.32, 1, 1), bubble 3s 3s linear infinite;
+}
+
+.App .controls .button.button-no {
+  color: #F44336 !important;
+  border-color: #F44336 !important;
+  animation: float-in 1s 2.5s cubic-bezier(0, 1.32, 1, 1), bubble 3s 3.5s linear infinite;
+}
+
+@keyframes bubble {
+  0% {
+    transform: translateX(0px) translateY(0px);
+  }
+
+  25% {
+    transform: translateX(4px) translateY(4px);
+  }
+
+  50% {
+    transform: translateX(3px) translateY(8px);
+  }
+
+  75% {
+    transform: translateX(0px) translateY(3px);
+  }
+
+  100% {
+    transform: translateX(0px) translateY(0px);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes float-in {
+  from {
+    transform: translateY(200px);
+  }
+  to {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes first-fade-in {
+  from {
+    background-color: #fff;
+  }
+  to {
+    background-color: rgba(254, 241, 212, 0.3)
+  }
+}
+
+.confirm-icon {
+  width: 150px;
+  margin: 30px 0;
+}
+
+.confirm-text {
+  font-size: 30px;
+  text-align: center;
+}
