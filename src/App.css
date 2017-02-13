@@ -8,7 +8,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  animation: first-fade-in 1s linear forwards;
+  overflow: hidden;
+  /*animation: first-fade-in 1s linear forwards;*/
 }
 
 .App .loading-layout {
@@ -50,13 +51,13 @@
   width: 60px;
   position: absolute;
   top: -15px;
-  left: 10px;
+  left: -38px;
 }
 
 .App .image-4 {
   position: absolute;
   top: -36px;
-  right: 10px;
+  right: -45px;
   transform: rotate(30deg);
 }
 
@@ -87,6 +88,7 @@
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+  width: 100%;
 }
 
 .App .controls .button {
@@ -107,21 +109,31 @@
 }
 
 .App .controls .button.button-yes {
-  color: #7CB342 !important;
+  background-color: #7CB342 !important;
+  color: white !important;
+  opacity: 0.8;
   border-color: #7CB342 !important;
   animation: float-in 1s 1.5s cubic-bezier(0, 1.32, 1, 1), bubble 3s 2.5s linear infinite;
 }
 
-.App .controls .button.button-maybe {
-  color: #42A5F5 !important;
+.App .controls .button.button-udi {
+  /*background-color: #42A5F5 !important;*/
+  color: white !important;
+  opacity: 0.8;
   border-color: #42A5F5 !important;
-  animation: float-in 1s 2s cubic-bezier(0, 1.32, 1, 1), bubble 3s 3s linear infinite;
+  animation: float-in 1s 2.5s cubic-bezier(0, 1.32, 1, 1), bubble 3s 3.5s linear infinite, udi 2.5s 3.5s infinite;
+  background-size: 100%;
+  background-position: 1px;
+  height: 150px !important;
+  width: 150px !important;
 }
 
 .App .controls .button.button-no {
-  color: #F44336 !important;
+  background-color: #F44336 !important;
+  color: white !important;
+  opacity: 0.8;
   border-color: #F44336 !important;
-  animation: float-in 1s 2.5s cubic-bezier(0, 1.32, 1, 1), bubble 3s 3.5s linear infinite;
+  animation: float-in 1s 2s cubic-bezier(0, 1.32, 1, 1), bubble 3s 3s linear infinite;
 }
 
 @keyframes bubble {
@@ -171,7 +183,25 @@
     background-color: #fff;
   }
   to {
-    background-color: rgba(254, 241, 212, 0.3)
+    background-color: rgba(250, 241, 212, 0.3);
+  }
+}
+
+@keyframes udi {
+  0% {
+    transform: rotateY(0deg);
+    background-image: url(/udi-50.jpg);
+  }
+  50% {
+    transform: rotateY(180deg);
+    background-image: url(/udi-10.jpg);
+    background-size: 125%;
+    background-position: -30px;
+    background-repeat: no-repeat;
+  }
+  100% {
+    transform: rotateY(360deg);
+    background-image: url(/udi-50.jpg);
   }
 }
 
@@ -183,4 +213,14 @@
 .confirm-text {
   font-size: 30px;
   text-align: center;
+}
+
+.invited-list {
+  height: 100%;
+}
+
+.list-title {
+  font-weight: bold;
+  font-size: 16px;
+  margin: 15px 0;
 }
